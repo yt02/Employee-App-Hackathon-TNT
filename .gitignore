@@ -2,6 +2,7 @@
 # Keep these excluded if you do not want to publish these app folders from this repo root.
 /ai-chatbot-flutter/
 /employee-management-app/
+/Policy Sample/
 
 # Local tooling
 /.agent/
