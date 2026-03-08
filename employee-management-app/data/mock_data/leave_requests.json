@@ -1,0 +1,67 @@
+[
+  {
+    "request_id": "LR001",
+    "user_id": "emp_001",
+    "leave_type": "annual_leave",
+    "start_date": "2026-01-15",
+    "end_date": "2026-01-17",
+    "days": 3,
+    "reason": "Family vacation",
+    "status": "approved",
+    "applied_date": "2026-01-05",
+    "approved_by": "hr_manager_001",
+    "approved_date": "2026-01-06"
+  },
+  {
+    "request_id": "LR002",
+    "user_id": "emp_002",
+    "leave_type": "medical_leave",
+    "start_date": "2026-01-20",
+    "end_date": "2026-01-20",
+    "days": 1,
+    "reason": "Doctor appointment",
+    "status": "approved",
+    "applied_date": "2026-01-18",
+    "approved_by": "hr_manager_001",
+    "approved_date": "2026-01-19"
+  },
+  {
+    "request_id": "LR003",
+    "user_id": "emp_001",
+    "leave_type": "medical_leave",
+    "start_date": "2026-01-25",
+    "end_date": "2026-01-26",
+    "days": 2,
+    "reason": "Flu",
+    "status": "approved",
+    "applied_date": "2026-01-25",
+    "approved_by": "hr_manager_001",
+    "approved_date": "2026-01-25"
+  },
+  {
+    "request_id": "LR004",
+    "user_id": "emp_001",
+    "leave_type": "annual_leave",
+    "start_date": "2026-02-20",
+    "end_date": "2026-02-21",
+    "days": 2,
+    "reason": "travel to KL",
+    "status": "pending",
+    "applied_date": "2026-02-02",
+    "approved_by": null,
+    "approved_date": null
+  },
+  {
+    "request_id": "LR005",
+    "user_id": "emp_001",
+    "leave_type": "medical_leave",
+    "start_date": "2026-02-03",
+    "end_date": "2026-02-03",
+    "days": 1,
+    "reason": "feel unwell",
+    "status": "pending",
+    "applied_date": "2026-02-02",
+    "approved_by": null,
+    "approved_date": null
+  }
+]

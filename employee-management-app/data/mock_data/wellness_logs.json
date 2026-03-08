@@ -1,0 +1,43 @@
+[
+    {
+        "log_id": "LOG_001",
+        "user_id": "emp_001",
+        "date": "2026-02-01",
+        "activity_type": "steps",
+        "value": 8500,
+        "unit": "steps",
+        "notes": "Morning walk and lunch break",
+        "created_at": "2026-02-01T20:00:00"
+    },
+    {
+        "log_id": "LOG_002",
+        "user_id": "emp_001",
+        "date": "2026-02-02",
+        "activity_type": "exercise",
+        "value": 45,
+        "unit": "minutes",
+        "notes": "Yoga session",
+        "created_at": "2026-02-02T08:00:00"
+    },
+    {
+        "log_id": "LOG_003",
+        "user_id": "emp_002",
+        "date": "2026-02-01",
+        "activity_type": "steps",
+        "value": 12000,
+        "unit": "steps",
+        "notes": "Very active day",
+        "created_at": "2026-02-01T21:00:00"
+    },
+    {
+        "log_id": "LOG_004",
+        "user_id": "emp_001",
+        "date": "2026-02-02",
+        "activity_type": "meditation",
+        "value": 20,
+        "unit": "minutes",
+        "notes": "Evening meditation",
+        "created_at": "2026-02-02T18:00:00"
+    }
+]
+

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Employee Management System</title>
+
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Comprehensive employee management application with leave, meetings, calendar, ticketing, and more">
+    <meta name="theme-color" content="#667eea">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="EMS">
+
+    <!-- Manifest -->
+    <link rel="manifest" href="/static/manifest.json">
+
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/static/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/static/icons/icon-192x192.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>🏢 Employee Management System</h1>
+                <p>Please login to continue</p>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="e.g., emp_001">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Enter password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <div id="loginError" class="error-message"></div>
+            </form>
+            <div class="login-help">
+                <p><strong>Demo Accounts:</strong></p>
+                <ul>
+                    <li>emp_001 / password123 (Employee)</li>
+                    <li>hr_manager_001 / password123 (HR Manager)</li>
+                    <li>facility_mgr_001 / password123 (Facility Manager)</li>
+                    <li>admin_001 / admin123 (Admin)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main App Screen -->
+    <div id="appScreen" class="screen">
+        <!-- Header -->
+        <div class="app-header">
+            <h1>🏢 Employee Management System</h1>
+            <div class="user-info">
+                <span id="userName">User</span>
+                <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="leave">📅 Leave</button>
+            <button class="tab-btn" data-tab="rooms">🏢 Meeting Rooms</button>
+            <button class="tab-btn" data-tab="calendar">📆 Calendar</button>
+            <button class="tab-btn" data-tab="tickets">🎫 Tickets</button>
+            <button class="tab-btn" data-tab="attendance">⏰ Attendance</button>
+            <button class="tab-btn" data-tab="visitor">👤 Visitor</button>
+            <button class="tab-btn" data-tab="shuttle">🚐 Shuttle</button>
+            <button class="tab-btn" data-tab="training">📚 Training</button>
+            <button class="tab-btn" data-tab="wellness">💪 Wellness</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Leave Tab -->
+            <div id="leaveTab" class="tab-panel active">
+                <h2>Leave Management</h2>
+                
+                <!-- Leave Balance -->
+                <div class="card">
+                    <h3>Your Leave Balance</h3>
+                    <div id="leaveBalance" class="balance-grid">
+                        <div class="balance-item">
+                            <div class="balance-label">Annual Leave</div>
+                            <div class="balance-value" id="alBalance">-</div>
+                        </div>
+                        <div class="balance-item">
+                            <div class="balance-label">Medical Leave</div>
+                            <div class="balance-value" id="mlBalance">-</div>
+                        </div>
+                        <div class="balance-item">
+                            <div class="balance-label">Unpaid Leave</div>
+                            <div class="balance-value" id="ulBalance">-</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apply Leave Form -->
+                <div class="card">
+                    <h3>Apply for Leave</h3>
+                    <form id="leaveForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="leaveType">Leave Type</label>
+                                <select id="leaveType" required>
+                                    <option value="annual_leave">Annual Leave</option>
+                                    <option value="medical_leave">Medical Leave</option>
+                                    <option value="unpaid_leave">Unpaid Leave</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startDate">Start Date</label>
+                                <input type="date" id="startDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="endDate">End Date</label>
+                                <input type="date" id="endDate" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="leaveReason">Reason</label>
+                            <textarea id="leaveReason" rows="3" required placeholder="Enter reason for leave"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Leave Request</button>
+                    </form>
+                    <div id="leaveMessage" class="message"></div>
+                </div>
+
+                <!-- Leave History -->
+                <div class="card">
+                    <h3>Leave History</h3>
+                    <div id="leaveHistory" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meeting Rooms Tab -->
+            <div id="roomsTab" class="tab-panel">
+                <h2>Meeting Room Booking</h2>
+                
+                <!-- Available Rooms -->
+                <div class="card">
+                    <h3>Available Rooms</h3>
+                    <div id="roomsList" class="rooms-grid">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Book Room Form -->
+                <div class="card">
+                    <h3>Book a Room</h3>
+                    <form id="roomBookingForm">
+                        <div class="form-group">
+                            <label for="roomSelect">Select Room</label>
+                            <select id="roomSelect" required>
+                                <option value="">Choose a room...</option>
+                            </select>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="bookingDate">Date</label>
+                                <input type="date" id="bookingDate" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startTime">Start Time</label>
+                                <input type="time" id="startTime" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="endTime">End Time</label>
+                                <input type="time" id="endTime" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bookingPurpose">Purpose</label>
+                            <textarea id="bookingPurpose" rows="2" required placeholder="Meeting purpose"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Book Room</button>
+                    </form>
+                    <div id="roomMessage" class="message"></div>
+                </div>
+
+                <!-- My Bookings -->
+                <div class="card">
+                    <h3>My Bookings</h3>
+                    <div id="myBookings" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calendar Tab -->
+            <div id="calendarTab" class="tab-panel">
+                <h2>Calendar & Events</h2>
+
+                <!-- Create Event Form -->
+                <div class="card">
+                    <h3>Create New Event</h3>
+                    <form id="eventForm">
+                        <div class="form-group">
+                            <label for="eventTitle">Event Title</label>
+                            <input type="text" id="eventTitle" required placeholder="e.g., Team Meeting">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDescription">Description</label>
+                            <textarea id="eventDescription" rows="2" required placeholder="Event details"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventStartDate">Start Date & Time</label>
+                                <input type="datetime-local" id="eventStartDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="eventEndDate">End Date & Time</label>
+                                <input type="datetime-local" id="eventEndDate" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="eventLocation">Location</label>
+                                <input type="text" id="eventLocation" placeholder="e.g., Conference Room A1">
+                            </div>
+                            <div class="form-group">
+                                <label for="eventType">Event Type</label>
+                                <select id="eventType" required>
+                                    <option value="meeting">Meeting</option>
+                                    <option value="deadline">Deadline</option>
+                                    <option value="task">Task</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Event</button>
+                    </form>
+                    <div id="eventMessage" class="message"></div>
+                </div>
+
+                <!-- My Events -->
+                <div class="card">
+                    <h3>My Events</h3>
+                    <div id="myEvents" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tickets Tab -->
+            <div id="ticketsTab" class="tab-panel">
+                <h2>Support Tickets</h2>
+
+                <!-- Create Ticket Form -->
+                <div class="card">
+                    <h3>Submit New Ticket</h3>
+                    <form id="ticketForm">
+                        <div class="form-group">
+                            <label for="ticketTitle">Title</label>
+                            <input type="text" id="ticketTitle" required placeholder="Brief description of the issue">
+                        </div>
+                        <div class="form-group">
+                            <label for="ticketDescription">Description</label>
+                            <textarea id="ticketDescription" rows="3" required placeholder="Detailed description"></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="ticketCategory">Category</label>
+                                <select id="ticketCategory" required>
+                                    <option value="IT Support">IT Support</option>
+                                    <option value="Hardware Request">Hardware Request</option>
+                                    <option value="Facilities">Facilities</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="ticketPriority">Priority</label>
+                                <select id="ticketPriority" required>
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                    <option value="urgent">Urgent</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Ticket</button>
+                    </form>
+                    <div id="ticketMessage" class="message"></div>
+                </div>
+
+                <!-- My Tickets -->
+                <div class="card">
+                    <h3>My Tickets</h3>
+                    <div id="myTickets" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Attendance Tab -->
+            <div id="attendanceTab" class="tab-panel">
+                <h2>Attendance Tracking</h2>
+
+                <!-- Clock In/Out -->
+                <div class="card">
+                    <h3>Clock In/Out</h3>
+                    <div class="clock-buttons">
+                        <button id="clockInBtn" class="btn btn-primary">🕐 Clock In</button>
+                        <button id="clockOutBtn" class="btn btn-secondary">🕐 Clock Out</button>
+                    </div>
+                    <div id="clockMessage" class="message"></div>
+                </div>
+
+                <!-- Attendance Summary -->
+                <div class="card">
+                    <h3>This Month's Summary</h3>
+                    <div id="attendanceSummary" class="summary-grid">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Attendance Records -->
+                <div class="card">
+                    <h3>Attendance Records</h3>
+                    <div id="attendanceRecords" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visitor Tab -->
+            <div id="visitorTab" class="tab-panel">
+                <h2>Visitor Registration</h2>
+
+                <!-- Register Visitor Form -->
+                <div class="card">
+                    <h3>Register New Visitor</h3>
+                    <form id="visitorForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="visitorName">Visitor Name</label>
+                                <input type="text" id="visitorName" required placeholder="Full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="visitorCompany">Company</label>
+                                <input type="text" id="visitorCompany" required placeholder="Company name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="visitorEmail">Email</label>
+                                <input type="email" id="visitorEmail" required placeholder="email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="visitorPhone">Phone</label>
+                                <input type="tel" id="visitorPhone" required placeholder="+60123456789">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="visitorPurpose">Purpose of Visit</label>
+                            <textarea id="visitorPurpose" rows="2" required placeholder="Meeting, interview, etc."></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="visitorDate">Visit Date</label>
+                                <input type="date" id="visitorDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="visitorArrival">Expected Arrival</label>
+                                <input type="time" id="visitorArrival" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="visitorDeparture">Expected Departure</label>
+                                <input type="time" id="visitorDeparture" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register Visitor</button>
+                    </form>
+                    <div id="visitorMessage" class="message"></div>
+                </div>
+
+                <!-- Visitors List -->
+                <div class="card">
+                    <h3>Visitors</h3>
+                    <div id="visitorsList" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shuttle Tab -->
+            <div id="shuttleTab" class="tab-panel">
+                <h2>Shuttle Booking</h2>
+
+                <!-- Book Shuttle Form -->
+                <div class="card">
+                    <h3>Book Shuttle</h3>
+                    <form id="shuttleForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="shuttleRoute">Route</label>
+                                <select id="shuttleRoute" required>
+                                    <option value="">Select route...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="shuttleDate">Date</label>
+                                <input type="date" id="shuttleDate" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="shuttleTime">Departure Time</label>
+                                <select id="shuttleTime" required>
+                                    <option value="">Select time...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="shuttleSeats">Seats</label>
+                                <input type="number" id="shuttleSeats" min="1" max="5" value="1" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Book Shuttle</button>
+                    </form>
+                    <div id="shuttleMessage" class="message"></div>
+                </div>
+
+                <!-- My Shuttle Bookings -->
+                <div class="card">
+                    <h3>My Shuttle Bookings</h3>
+                    <div id="shuttleBookings" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training Tab -->
+            <div id="trainingTab" class="tab-panel">
+                <h2>Training & Development</h2>
+
+                <!-- Available Courses -->
+                <div class="card">
+                    <h3>Available Courses</h3>
+                    <div id="trainingCourses" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+
+                <!-- My Enrollments -->
+                <div class="card">
+                    <h3>My Enrollments</h3>
+                    <div id="trainingEnrollments" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wellness Tab -->
+            <div id="wellnessTab" class="tab-panel">
+                <h2>Wellness Programs</h2>
+
+                <!-- Log Wellness Activity -->
+                <div class="card">
+                    <h3>Log Wellness Activity</h3>
+                    <form id="wellnessForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="wellnessType">Activity Type</label>
+                                <select id="wellnessType" required>
+                                    <option value="steps">Steps</option>
+                                    <option value="exercise">Exercise</option>
+                                    <option value="meditation">Meditation</option>
+                                    <option value="sleep">Sleep</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="wellnessValue">Value</label>
+                                <input type="number" id="wellnessValue" required placeholder="e.g., 8000">
+                            </div>
+                            <div class="form-group">
+                                <label for="wellnessUnit">Unit</label>
+                                <select id="wellnessUnit" required>
+                                    <option value="steps">Steps</option>
+                                    <option value="minutes">Minutes</option>
+                                    <option value="hours">Hours</option>
+                                    <option value="km">Kilometers</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Log Activity</button>
+                    </form>
+                    <div id="wellnessMessage" class="message"></div>
+                </div>
+
+                <!-- Wellness Programs -->
+                <div class="card">
+                    <h3>Available Programs</h3>
+                    <div id="wellnessPrograms" class="table-container">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+
+                <!-- Wellness Statistics -->
+                <div class="card">
+                    <h3>My Wellness Statistics</h3>
+                    <div id="wellnessStats" class="summary-grid">
+                        <p>Loading...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js?v=3"></script>
+
+    <!-- PWA Service Worker Registration -->
+    <script>
+        // Register service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/static/service-worker.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
+        }
+
+        // Install prompt
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later
+            deferredPrompt = e;
+            // Show install button/banner (optional)
+            showInstallPromotion();
+        });
+
+        function showInstallPromotion() {
+            // You can show a custom install button here
+            console.log('App can be installed');
+            // Example: Show a banner or button to prompt installation
+        }
+
+        // Handle app installation
+        window.addEventListener('appinstalled', () => {
+            console.log('PWA was installed');
+            deferredPrompt = null;
+        });
+    </script>
+</body>
+</html>
+
