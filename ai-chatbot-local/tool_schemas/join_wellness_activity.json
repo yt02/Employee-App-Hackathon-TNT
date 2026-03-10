@@ -1,0 +1,21 @@
+{
+  "name": "join_wellness_activity",
+  "description": "Register an employee for an upcoming wellness activity. (Alias for join_wellness)",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The employee ID, e.g. 'emp_001'"
+      },
+      "activity_id": {
+        "type": "string",
+        "description": "The ID of the wellness activity, e.g. 'WL001'"
+      }
+    },
+    "required": [
+      "user_id",
+      "activity_id"
+    ]
+  }
+}

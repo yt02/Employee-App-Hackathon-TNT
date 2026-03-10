@@ -1,0 +1,67 @@
+﻿[
+  {
+    "name": "AZURE_CONNECTION_STRING",
+    "slotSetting": false,
+    "value": "eastus2.api.azureml.ms;96c8b907-d749-4dec-8c2a-51a334b457bf;TNT-RG;tnt-bc5-employee-app"
+  },
+  {
+    "name": "DATABASE_URL",
+    "slotSetting": false,
+    "value": "postgresql://adminuser:SecretPassword123!@tnt-bc5-chatbot-db.postgres.database.azure.com:5432/chatbotdb"
+  },
+  {
+    "name": "WEBSITES_CONTAINER_START_TIME_LIMIT",
+    "slotSetting": false,
+    "value": "1800"
+  },
+  {
+    "name": "WEBSITES_PORT",
+    "slotSetting": false,
+    "value": "8000"
+  },
+  {
+    "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
+    "slotSetting": false,
+    "value": "true"
+  },
+  {
+    "name": "PYTHONPATH",
+    "slotSetting": false,
+    "value": "/home/site/wwwroot"
+  },
+  {
+    "name": "AZURE_ACCESS_TOKEN",
+    "slotSetting": false,
+    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6InNNMV95QXhWOEdWNHlOLUI2ajJ4em1pazVBbyIsImtpZCI6InNNMV95QXhWOEdWNHlOLUI2ajJ4em1pazVBbyJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuY29yZS53aW5kb3dzLm5ldC8iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC84NWFmZjQwYi1lMjhkLTQ5MGQtYWE3MS00NzhhMDM4ZjM4YjMvIiwiaWF0IjoxNzcyNzEwMzIxLCJuYmYiOjE3NzI3MTAzMjEsImV4cCI6MTc3MjcxNDMzMiwiYWNyIjoiMSIsImFjcnMiOlsicDEiXSwiYWlvIjoiQVpRQWEvOGJBQUFBbHRlVGJYMWdKVEhYd0lWeVJjODNXSDUvT2lYYnVEL2hsODNwQitjSXNGdHd1UGFwUVU2bXk2YXJ4ZkgyUWJZNFlMeVA0Z21Vb2p4RzlHSVlRYkIwaFQ4ZklyUXRaZmcwYUpULzNHRk0vQTU3c25ISzhLVGcvUnR6ejIvdnNHbjliclhiS3NGd3ZFbjJjNlMzajVYT3hramtYcmJiMzhQRXBLTmpQcHkvRndBMWw0YXdVYmZ4RW9VSGY4anVLR2JqIiwiYWx0c2VjaWQiOiIxOmxpdmUuY29tOjAwMDM3RkZFM0VEMzkyRDIiLCJhbXIiOlsicHdkIiwibWZhIl0sImFwcGlkIjoiMDRiMDc3OTUtOGRkYi00NjFhLWJiZWUtMDJmOWUxYmY3YjQ2IiwiYXBwaWRhY3IiOiIwIiwiZW1haWwiOiJ5ZWV0aG9uZzAyQHlhaG9vLmNvbSIsImZhbWlseV9uYW1lIjoidGVlIiwiZ2l2ZW5fbmFtZSI6Inl0aG9uZyIsImlkcCI6ImxpdmUuY29tIiwiaWR0eXAiOiJ1c2VyIiwiaXBhZGRyIjoiMTYxLjE0Mi4xNTYuNzYiLCJuYW1lIjoiVGVlIFllZSBUaG9uZyIsIm9pZCI6IjM0MzJjYWMwLWE2NjAtNDdjMC1hZGU5LTFmZjk0ZGJlYWFjMiIsInB1aWQiOiIxMDAzMjAwNTg1OEM3QUZDIiwicmgiOiIxLkFTc0FDX1N2aFkzaURVbXFjVWVLQTQ4NHMwWklmM2tBdXRkUHVrUGF3ZmoyTUJNQUFEa3JBQS4iLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzaWQiOiIwMDJlNmFlYS0wYzU5LTlkMzgtMWY3NS02NmE2YTEyNjZiYzIiLCJzdWIiOiJTaUhMRE44VDJOczlMb0dKeTJYM0NXYXg3VmRyWmhEN1J5WC1vbHpSSUZnIiwidGlkIjoiODVhZmY0MGItZTI4ZC00OTBkLWFhNzEtNDc4YTAzOGYzOGIzIiwidW5pcXVlX25hbWUiOiJsaXZlLmNvbSN5ZWV0aG9uZzAyQHlhaG9vLmNvbSIsInV0aSI6ImtLa0NmVE5RT2sycllCakY0X2NkQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjEzYmQxYzcyLTZmNGEtNGRjZi05ODVmLTE4ZDNiODBmMjA4YSJdLCJ4bXNfYWN0X2ZjdCI6IjUgMyIsInhtc19lZG92Ijp0cnVlLCJ4bXNfZnRkIjoibmdRVHF1NlFsc3NnUzJ6c3FtTmNpZDl0NXRTT2NLRnY0OF8xMF9LSHYxUUJhbUZ3WVc1bFlYTjBMV1J6YlhNIiwieG1zX2lkcmVsIjoiNSA2IiwieG1zX3N1Yl9mY3QiOiIzIDE2IiwieG1zX3RjZHQiOjE3MDk4ODA1NDN9.X3yCvdWS1k4BoDISjmgccjFiVyomdz2_8LTPZUJ-uKZKf36aRfoLYZSLoSbdRj-bnt9JixHeSmM-lm7cSr3VOCk3fZTJOibI6-5C3sXMKTjYLiocXX2yAkjzi_b-0acLKxOrt8xXYxED5gXNQrprZCxzkpOUtWm3bKWishdKuGlT84YNbe4eUgEsrZ4Tk8hRj4oaCxbo1V6QHceirKggg12VCTivwIFw0sLbxkpG1Y1siQ8_KtKcfZObJENggXweNSbmymSL5gG--96rSE2QspP1OgxH1ZJe7wF0oCkgwZnyfDMPMNVHweIOM8xcAheyEzEZ2sH719iFthrL1Zhzjg"
+  },
+  {
+    "name": "AZURE_AGENT_ID",
+    "slotSetting": false,
+    "value": "asst_C7uSyxWNjSPXiVj5TIhAOIe3"
+  },
+  {
+    "name": "AZURE_ORCHESTRATOR_ID",
+    "slotSetting": false,
+    "value": "asst_C7uSyxWNjSPXiVj5TIhAOIe3"
+  },
+  {
+    "name": "AZURE_LEAVE_AGENT_ID",
+    "slotSetting": false,
+    "value": "asst_gRsCfwZTqT568gQyeEzYfWk6"
+  },
+  {
+    "name": "AZURE_ROOM_AGENT_ID",
+    "slotSetting": false,
+    "value": "asst_xGdKbALAmgUzcpnF4ZBLlMpR"
+  },
+  {
+    "name": "AZURE_IT_AGENT_ID",
+    "slotSetting": false,
+    "value": "asst_DVoRukukAIViqydvmFm9SjEo"
+  },
+  {
+    "name": "AZURE_HR_AGENT_ID",
+    "slotSetting": false,
+    "value": "asst_Z6E4Jnc5nwnQTFpTPAdVeKlz"
+  }
+]

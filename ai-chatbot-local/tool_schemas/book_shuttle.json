@@ -1,0 +1,26 @@
+{
+  "name": "book_shuttle",
+  "description": "Book a seat on a corporate shuttle for a specific route and time.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The employee ID, e.g. 'emp_001'"
+      },
+      "route_id": {
+        "type": "string",
+        "description": "The ID of the shuttle route, e.g. 'SH001'"
+      },
+      "departure_time": {
+        "type": "string",
+        "description": "The departure time, e.g. '08:30'"
+      }
+    },
+    "required": [
+      "user_id",
+      "route_id",
+      "departure_time"
+    ]
+  }
+}

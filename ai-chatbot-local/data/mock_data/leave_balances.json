@@ -1,0 +1,182 @@
+[
+  {
+    "user_id": "emp_001",
+    "year": 2026,
+    "annual_leave": {
+      "total": 14,
+      "used": 5,
+      "remaining": 9
+    },
+    "medical_leave": {
+      "total": 14,
+      "used": 3,
+      "remaining": 11
+    },
+    "unpaid_leave": {
+      "total": 0,
+      "used": 0,
+      "remaining": 0
+    },
+    "compassionate_leave": {
+      "total": 3,
+      "used": 0,
+      "remaining": 3
+    },
+    "maternity_leave": {
+      "total": 60,
+      "used": 0,
+      "remaining": 60
+    },
+    "paternity_leave": {
+      "total": 7,
+      "used": 0,
+      "remaining": 7
+    },
+    "carry_forward_days": 3,
+    "carry_forward_expiry": "2026-03-31"
+  },
+  {
+    "user_id": "emp_002",
+    "year": 2026,
+    "annual_leave": {
+      "total": 14,
+      "used": 5,
+      "remaining": 9
+    },
+    "medical_leave": {
+      "total": 14,
+      "used": 1,
+      "remaining": 13
+    },
+    "unpaid_leave": {
+      "total": 0,
+      "used": 0,
+      "remaining": 0
+    },
+    "compassionate_leave": {
+      "total": 3,
+      "used": 0,
+      "remaining": 3
+    },
+    "maternity_leave": {
+      "total": 60,
+      "used": 0,
+      "remaining": 60
+    },
+    "paternity_leave": {
+      "total": 7,
+      "used": 0,
+      "remaining": 7
+    },
+    "carry_forward_days": 0,
+    "carry_forward_expiry": ""
+  },
+  {
+    "user_id": "hr_manager_001",
+    "year": 2026,
+    "annual_leave": {
+      "total": 18,
+      "used": 4,
+      "remaining": 14
+    },
+    "medical_leave": {
+      "total": 14,
+      "used": 0,
+      "remaining": 14
+    },
+    "unpaid_leave": {
+      "total": 0,
+      "used": 0,
+      "remaining": 0
+    },
+    "compassionate_leave": {
+      "total": 3,
+      "used": 0,
+      "remaining": 3
+    },
+    "maternity_leave": {
+      "total": 60,
+      "used": 0,
+      "remaining": 60
+    },
+    "paternity_leave": {
+      "total": 7,
+      "used": 0,
+      "remaining": 7
+    },
+    "carry_forward_days": 5,
+    "carry_forward_expiry": "2026-03-31"
+  },
+  {
+    "user_id": "facility_mgr_001",
+    "year": 2026,
+    "annual_leave": {
+      "total": 18,
+      "used": 6,
+      "remaining": 12
+    },
+    "medical_leave": {
+      "total": 14,
+      "used": 3,
+      "remaining": 11
+    },
+    "unpaid_leave": {
+      "total": 0,
+      "used": 0,
+      "remaining": 0
+    },
+    "compassionate_leave": {
+      "total": 3,
+      "used": 0,
+      "remaining": 3
+    },
+    "maternity_leave": {
+      "total": 60,
+      "used": 0,
+      "remaining": 60
+    },
+    "paternity_leave": {
+      "total": 7,
+      "used": 0,
+      "remaining": 7
+    },
+    "carry_forward_days": 0,
+    "carry_forward_expiry": ""
+  },
+  {
+    "user_id": "admin_001",
+    "year": 2026,
+    "annual_leave": {
+      "total": 18,
+      "used": 2,
+      "remaining": 16
+    },
+    "medical_leave": {
+      "total": 14,
+      "used": 0,
+      "remaining": 14
+    },
+    "unpaid_leave": {
+      "total": 0,
+      "used": 0,
+      "remaining": 0
+    },
+    "compassionate_leave": {
+      "total": 3,
+      "used": 0,
+      "remaining": 3
+    },
+    "maternity_leave": {
+      "total": 60,
+      "used": 0,
+      "remaining": 60
+    },
+    "paternity_leave": {
+      "total": 7,
+      "used": 0,
+      "remaining": 7
+    },
+    "carry_forward_days": 0,
+    "carry_forward_expiry": ""
+  }
+]

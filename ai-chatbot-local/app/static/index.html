@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chin Hin Employee Assistant</title>
+    <meta name="description"
+        content="AI-powered employee assistant for Chin Hin - manage leave, book rooms, and get IT support through natural conversation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">CH</div>
+                <div class="logo-text">
+                    <span class="logo-title">Chin Hin</span>
+                    <span class="logo-subtitle">Employee Assistant</span>
+                </div>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-label">Quick Actions</div>
+            <button class="nav-item" data-action="What's my leave balance?" id="navLeave">
+                <span class="nav-icon">📅</span>
+                <span class="nav-text">Leave Management</span>
+                <span class="nav-badge">3 types</span>
+            </button>
+            <button class="nav-item" data-action="Show available meeting rooms" id="navRooms">
+                <span class="nav-icon">🏢</span>
+                <span class="nav-text">Meeting Rooms</span>
+            </button>
+            <button class="nav-item" data-action="Check my tickets" id="navTickets">
+                <span class="nav-icon">🎫</span>
+                <span class="nav-text">IT Support</span>
+            </button>
+
+            <div class="nav-divider"></div>
+            <div class="nav-label">Resources</div>
+            <button class="nav-item" data-action="Show shuttle schedule" id="navShuttle">
+                <span class="nav-icon">🚐</span>
+                <span class="nav-text">Shuttle</span>
+            </button>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-card" id="userCard">
+                <div class="user-avatar">L</div>
+                <div class="user-info">
+                    <span class="user-name">Loading...</span>
+                    <span class="user-role">Loading...</span>
+                </div>
+                <span class="user-status-dot"></span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Mobile Header -->
+        <header class="mobile-header" id="mobileHeader">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle sidebar">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="mobile-title">Chin Hin Assistant</div>
+        </header>
+
+        <!-- Chat Header -->
+        <header class="chat-header" id="chatHeader">
+            <div class="chat-header-left">
+                <div class="assistant-avatar">
+                    <span class="avatar-icon">🤖</span>
+                    <span class="status-indicator"></span>
+                </div>
+                <div class="assistant-info">
+                    <h1 class="assistant-name">AI Employee Assistant</h1>
+                    <span class="assistant-status">Online — Ready to help</span>
+                </div>
+            </div>
+            <div class="chat-header-right">
+                <button class="header-btn" id="clearChatBtn" title="New conversation">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14M5 12h14" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Nudge Banner -->
+        <div class="nudge-banner" id="nudgeBanner">
+            <div class="nudge-icon">💡</div>
+            <div class="nudge-content">
+                <span class="nudge-text" id="nudgeText">You have <strong>2 pending leave requests</strong> awaiting
+                    approval. Want me to check the status?</span>
+            </div>
+            <button class="nudge-action" id="nudgeAction">Check Now</button>
+            <button class="nudge-dismiss" id="nudgeDismiss" aria-label="Dismiss">✕</button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <!-- Welcome message -->
+            <div class="message bot-message" id="welcomeMessage">
+                <div class="message-avatar">🤖</div>
+                <div class="message-bubble">
+                    <div class="welcome-card">
+                        <h2 class="welcome-title">Welcome back, ${firstName}!👋</h2>
+                        <p class="welcome-subtitle">I'm your AI assistant. Tell me what you need — I'll handle it
+                            instantly.</p>
+                        <div class="feature-grid">
+                            <div class="feature-card" data-action="Apply for 2 days annual leave starting tomorrow">
+                                <span class="feature-icon">📅</span>
+                                <span class="feature-label">Apply Leave</span>
+                                <span class="feature-desc">Request time off</span>
+                            </div>
+                            <div class="feature-card" data-action="Book Conference Room A for tomorrow at 2pm">
+                                <span class="feature-icon">🏢</span>
+                                <span class="feature-label">Book Room</span>
+                                <span class="feature-desc">Reserve a space</span>
+                            </div>
+                            <div class="feature-card" data-action="Create an IT ticket for laptop issue">
+                                <span class="feature-icon">🎫</span>
+                                <span class="feature-label">IT Support</span>
+                                <span class="feature-desc">Report an issue</span>
+                            </div>
+                            <div class="feature-card" data-action="What's my leave balance?">
+                                <span class="feature-icon">📊</span>
+                                <span class="feature-label">My Balance</span>
+                                <span class="feature-desc">Check leave days</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Suggestion Chips -->
+        <div class="suggestions-container" id="suggestionsContainer">
+            <div class="suggestions-scroll" id="suggestionsScroll">
+                <button class="suggestion-chip" data-message="What's my leave balance?">📅 Check leave balance</button>
+                <button class="suggestion-chip" data-message="Show available meeting rooms">🏢 Available rooms</button>
+                <button class="suggestion-chip" data-message="Apply for 1 day annual leave tomorrow">📝 Apply for
+                    leave</button>
+                <button class="suggestion-chip" data-message="Check my tickets">🎫 My tickets</button>
+                <button class="suggestion-chip" data-message="Book Conference Room A for tomorrow at 2pm">📍 Book a
+                    room</button>
+                <button class="suggestion-chip" data-message="Create an IT ticket for network issue">🆕 New IT
+                    ticket</button>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-wrapper" id="chatInputWrapper">
+            <form id="chatForm" class="chat-form">
+                <div class="input-container">
+                    <textarea id="messageInput"
+                        placeholder="Type a message... (Enter to send, Shift+Enter for new line)" rows="1"
+                        aria-label="Message input"></textarea>
+                    <button type="submit" id="sendButton" class="send-btn" aria-label="Send message">
+                        <svg class="send-icon" id="sendIcon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 2L11 13"></path>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                        </svg>
+                        <div class="loading-spinner" id="loadingIcon" style="display:none;">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </button>
+                </div>
+                <div class="input-footer">
+                    <span class="input-hint">Powered by Microsoft Azure AI</span>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <script src="/static/script.js?v=2"></script>
+</body>
+
+</html>

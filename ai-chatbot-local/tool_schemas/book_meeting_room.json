@@ -1,0 +1,40 @@
+{
+  "name": "book_meeting_room",
+  "description": "Book a meeting room for a specific date and time. The room must be available at the requested time slot. Use list_available_rooms first if you need to find room IDs.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The employee ID, e.g. 'emp_001'"
+      },
+      "room_id": {
+        "type": "string",
+        "description": "The room ID to book, e.g. 'room_a', 'room_b', 'room_c'. You can also use the room name."
+      },
+      "date": {
+        "type": "string",
+        "description": "Date for the booking in YYYY-MM-DD format, e.g. '2026-02-14'"
+      },
+      "start_time": {
+        "type": "string",
+        "description": "Start time in HH:MM format (24-hour), e.g. '14:00'"
+      },
+      "end_time": {
+        "type": "string",
+        "description": "End time in HH:MM format (24-hour), e.g. '15:00'"
+      },
+      "purpose": {
+        "type": "string",
+        "description": "Purpose of the meeting, e.g. 'Team standup'"
+      }
+    },
+    "required": [
+      "user_id",
+      "room_id",
+      "date",
+      "start_time",
+      "end_time"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "enroll_training",
+  "description": "Enroll an employee in a professional training course.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The employee ID, e.g. 'emp_001'"
+      },
+      "course_id": {
+        "type": "string",
+        "description": "The ID of the training course, e.g. 'TRN_001'"
+      }
+    },
+    "required": [
+      "user_id",
+      "course_id"
+    ]
+  }
+}

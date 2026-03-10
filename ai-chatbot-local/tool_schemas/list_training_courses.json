@@ -1,0 +1,9 @@
+{
+  "name": "list_training_courses",
+  "description": "List all currently available professional training courses and seminars.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

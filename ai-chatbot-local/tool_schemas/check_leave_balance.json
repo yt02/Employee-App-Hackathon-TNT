@@ -1,0 +1,16 @@
+{
+  "name": "check_leave_balance",
+  "description": "Check the leave balance for an employee. Returns remaining annual leave, medical leave, and unpaid leave days for the current year.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The employee ID, e.g. 'emp_001'"
+      }
+    },
+    "required": [
+      "user_id"
+    ]
+  }
+}
