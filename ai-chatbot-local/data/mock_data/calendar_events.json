@@ -1,0 +1,81 @@
+[
+    {
+        "event_id": "EVT_001",
+        "title": "Team Standup Meeting",
+        "description": "Daily standup with development team",
+        "start_datetime": "2026-02-03T09:00:00",
+        "end_datetime": "2026-02-03T09:30:00",
+        "location": "Conference Room A1",
+        "organizer_id": "emp_001",
+        "attendees": ["emp_001", "emp_002", "hr_manager_001"],
+        "event_type": "meeting",
+        "status": "confirmed",
+        "created_at": "2026-01-28T10:00:00"
+    },
+    {
+        "event_id": "EVT_002",
+        "title": "HR Policy Review",
+        "description": "Quarterly review of HR policies and procedures",
+        "start_datetime": "2026-02-05T14:00:00",
+        "end_datetime": "2026-02-05T16:00:00",
+        "location": "Meeting Room B2",
+        "organizer_id": "hr_manager_001",
+        "attendees": ["hr_manager_001", "admin_001"],
+        "event_type": "meeting",
+        "status": "confirmed",
+        "created_at": "2026-01-25T11:00:00"
+    },
+    {
+        "event_id": "EVT_003",
+        "title": "Project Deadline - Q1 Report",
+        "description": "Submit Q1 financial report",
+        "start_datetime": "2026-02-10T17:00:00",
+        "end_datetime": "2026-02-10T17:00:00",
+        "location": "",
+        "organizer_id": "emp_002",
+        "attendees": ["emp_002"],
+        "event_type": "deadline",
+        "status": "confirmed",
+        "created_at": "2026-01-20T09:00:00"
+    },
+    {
+        "event_id": "EVT_004",
+        "title": "Company Town Hall",
+        "description": "Monthly company-wide town hall meeting",
+        "start_datetime": "2026-02-15T10:00:00",
+        "end_datetime": "2026-02-15T11:30:00",
+        "location": "Main Auditorium",
+        "organizer_id": "admin_001",
+        "attendees": ["emp_001", "emp_002", "hr_manager_001", "facility_mgr_001", "admin_001"],
+        "event_type": "meeting",
+        "status": "confirmed",
+        "created_at": "2026-01-15T08:00:00"
+    },
+    {
+        "event_id": "EVT_005",
+        "title": "Facility Inspection",
+        "description": "Monthly facility safety inspection",
+        "start_datetime": "2026-02-08T08:00:00",
+        "end_datetime": "2026-02-08T12:00:00",
+        "location": "All Floors",
+        "organizer_id": "facility_mgr_001",
+        "attendees": ["facility_mgr_001"],
+        "event_type": "task",
+        "status": "confirmed",
+        "created_at": "2026-01-30T14:00:00"
+    },
+    {
+        "event_id": "EVT_006",
+        "title": "Client Presentation",
+        "description": "Present new product features to client",
+        "start_datetime": "2026-02-12T15:00:00",
+        "end_datetime": "2026-02-12T16:30:00",
+        "location": "Conference Room A1",
+        "organizer_id": "emp_001",
+        "attendees": ["emp_001", "emp_002"],
+        "event_type": "meeting",
+        "status": "tentative",
+        "created_at": "2026-02-01T10:00:00"
+    }
+]
+

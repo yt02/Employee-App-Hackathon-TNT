@@ -1,0 +1,171 @@
+[
+  {
+    "ticket_id": "TKT_001",
+    "title": "Laptop not connecting to WiFi",
+    "description": "My laptop cannot connect to the office WiFi network. Tried restarting but issue persists.",
+    "category": "IT Support",
+    "priority": "high",
+    "status": "in_progress",
+    "created_by": "emp_001",
+    "assigned_to": "admin_001",
+    "created_at": "2026-01-30T09:15:00",
+    "updated_at": "2026-01-31T10:30:00",
+    "resolved_at": null,
+    "comments": [
+      {
+        "comment_id": "CMT_001",
+        "user_id": "admin_001",
+        "comment": "Looking into this. Please try forgetting the network and reconnecting.",
+        "created_at": "2026-01-31T10:30:00"
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT_002",
+    "title": "Request for additional monitor",
+    "description": "I need a second monitor for better productivity. Current setup has only one screen.",
+    "category": "Hardware Request",
+    "priority": "medium",
+    "status": "pending",
+    "created_by": "emp_002",
+    "assigned_to": null,
+    "created_at": "2026-01-28T14:20:00",
+    "updated_at": "2026-01-28T14:20:00",
+    "resolved_at": null,
+    "comments": []
+  },
+  {
+    "ticket_id": "TKT_003",
+    "title": "Air conditioning too cold in office",
+    "description": "The AC in the east wing is set too cold. Multiple employees have complained.",
+    "category": "Facilities",
+    "priority": "medium",
+    "status": "resolved",
+    "created_by": "hr_manager_001",
+    "assigned_to": "facility_mgr_001",
+    "created_at": "2026-01-25T11:00:00",
+    "updated_at": "2026-01-27T16:00:00",
+    "resolved_at": "2026-01-27T16:00:00",
+    "comments": [
+      {
+        "comment_id": "CMT_002",
+        "user_id": "facility_mgr_001",
+        "comment": "Adjusted the thermostat. Temperature should be more comfortable now.",
+        "created_at": "2026-01-27T16:00:00"
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT_004",
+    "title": "Cannot access HR portal",
+    "description": "Getting 'Access Denied' error when trying to log into the HR portal.",
+    "category": "IT Support",
+    "priority": "high",
+    "status": "resolved",
+    "created_by": "emp_001",
+    "assigned_to": "admin_001",
+    "created_at": "2026-01-26T08:45:00",
+    "updated_at": "2026-01-26T10:15:00",
+    "resolved_at": "2026-01-26T10:15:00",
+    "comments": [
+      {
+        "comment_id": "CMT_003",
+        "user_id": "admin_001",
+        "comment": "Reset your permissions. You should be able to access now.",
+        "created_at": "2026-01-26T10:15:00"
+      }
+    ]
+  },
+  {
+    "ticket_id": "TKT_005",
+    "title": "Parking pass renewal",
+    "description": "My parking pass expires next week. Need to renew it.",
+    "category": "Facilities",
+    "priority": "low",
+    "status": "pending",
+    "created_by": "emp_002",
+    "assigned_to": "facility_mgr_001",
+    "created_at": "2026-02-01T13:30:00",
+    "updated_at": "2026-02-01T13:30:00",
+    "resolved_at": null,
+    "comments": []
+  },
+  {
+    "ticket_id": "TKTA9B474ED",
+    "user_id": "emp_001",
+    "category": "hardware",
+    "subject": "Laptop screen flickering",
+    "description": "The laptop screen is flickering and needs to be repaired.",
+    "priority": "medium",
+    "status": "open",
+    "created_at": "2026-02-26 11:14:51",
+    "updated_at": "2026-02-26 11:14:51",
+    "assigned_to": null,
+    "resolved_at": null
+  },
+  {
+    "ticket_id": "TKT77A613F3",
+    "user_id": "emp_001",
+    "category": "hardware",
+    "subject": "Laptop screen flickering",
+    "description": "The laptop screen is flickering and requires assistance.",
+    "priority": "medium",
+    "status": "open",
+    "created_at": "2026-02-26 11:19:48",
+    "updated_at": "2026-02-26 11:19:48",
+    "assigned_to": null,
+    "resolved_at": null
+  },
+  {
+    "ticket_id": "TKTD58711C1",
+    "user_id": "emp_001",
+    "category": "hardware",
+    "subject": "Laptop screen flickering",
+    "description": "The laptop screen is flickering and needs to be checked.",
+    "priority": "medium",
+    "status": "open",
+    "created_at": "2026-02-26 11:22:21",
+    "updated_at": "2026-02-26 11:22:21",
+    "assigned_to": null,
+    "resolved_at": null
+  },
+  {
+    "ticket_id": "TKT6AAF1B21",
+    "user_id": "emp_001",
+    "category": "hardware",
+    "subject": "Laptop screen flickering",
+    "description": "The laptop screen is flickering intermittently, making it difficult to work.",
+    "priority": "medium",
+    "status": "open",
+    "created_at": "2026-02-26 11:31:04",
+    "updated_at": "2026-02-26 11:31:04",
+    "assigned_to": null,
+    "resolved_at": null
+  },
+  {
+    "ticket_id": "TKT46B00D8F",
+    "user_id": "emp_001",
+    "category": "hardware",
+    "subject": "Laptop screen flickering",
+    "description": "My laptop screen is flickering and needs to be checked.",
+    "priority": "medium",
+    "status": "open",
+    "created_at": "2026-02-26 11:37:27",
+    "updated_at": "2026-02-26 11:37:27",
+    "assigned_to": null,
+    "resolved_at": null
+  },
+  {
+    "ticket_id": "TKT4AD24925",
+    "user_id": "emp_001",
+    "category": "hardware",
+    "subject": "Laptop Issue",
+    "description": "Experiencing issues with laptop functionality.",
+    "priority": "medium",
+    "status": "open",
+    "created_at": "2026-02-26 11:52:19",
+    "updated_at": "2026-02-26 11:52:19",
+    "assigned_to": null,
+    "resolved_at": null
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "name": "create_ticket",
+  "description": "Create a new IT support ticket. The ticket will be assigned to the IT team for resolution.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The employee ID, e.g. 'emp_001'"
+      },
+      "category": {
+        "type": "string",
+        "description": "Ticket category. Must be one of: 'hardware', 'software', 'network', 'access', 'other'"
+      },
+      "subject": {
+        "type": "string",
+        "description": "Brief subject line for the ticket, e.g. 'Laptop not charging'"
+      },
+      "description": {
+        "type": "string",
+        "description": "Detailed description of the issue"
+      },
+      "priority": {
+        "type": "string",
+        "description": "Priority level. Must be one of: 'low', 'medium', 'high', 'urgent'. Default is 'medium'."
+      }
+    },
+    "required": [
+      "user_id",
+      "category",
+      "subject",
+      "description"
+    ]
+  }
+}

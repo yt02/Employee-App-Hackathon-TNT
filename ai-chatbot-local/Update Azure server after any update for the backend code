@@ -1,0 +1,82 @@
+# Deployment Plan: Azure Backend Update
+
+Deploy the latest changes in `app/main.py` and the new module integrations to the Azure App Service.
+
+## Prerequisites
+- Azure CLI installed and logged in (`az login`).
+- Current directory: `d:\Chin Hin Hackathon\Business Challenge 5\ai-chatbot-local`
+
+## Proposed Deployment Steps
+
+### 1. Verification of Local Changes
+Ensure all backend logic and agent prompts are updated as intended.
+
+### 2. Authentication & Token Management (CRITICAL)
+Since the App Service uses a token-based authentication for Azure AI Foundry, you must ensure the remote token is valid (tokens expire every 60 minutes).
+
+**To refresh and push the token to Azure:**
+```powershell
+.\set_remote_token.ps1
+```
+*(This script fetches a fresh token, sets the `AZURE_ACCESS_TOKEN` app setting, and restarts the webapp).*
+
+---
+
+### 3. Prepare Deployment Package
+We use a custom python script (`build_zip.py`) to create a zip file containing the backend.
+
+**Command:**
+```powershell
+python build_zip.py
+```
+
+### 4. Deploy to Azure App Service
+Before deploy, force Oryx build settings so dependencies are installed from `requirements.txt`.
+
+**Command:**
+```powershell
+az webapp config appsettings set --name tnt-bc5-chatbot-api --resource-group TNT-RG --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true ENABLE_ORYX_BUILD=true WEBSITE_RUN_FROM_PACKAGE=0 WEBSITES_PORT=8000
+```
+
+Then push the zip using a clean deployment.
+
+**Command:**
+```powershell
+az webapp deploy --name tnt-bc5-chatbot-api --resource-group TNT-RG --src-path deploy.zip --type zip --clean true --restart true
+```
+
+---
+
+### 5. Configure Startup Command (IMPORTANT for Linux)
+Ensure the Azure App Service is configured to use the correct startup command. Run this once:
+
+**Command:**
+```powershell
+az webapp config set --name tnt-bc5-chatbot-api --resource-group TNT-RG --startup-file "python -m uvicorn app.main:app --host 0.0.0.0 --port 8000"
+```
+
+---
+
+### 6. Post-Deployment Verification
+Check the `/debug/auth` diagnostic endpoint to ensure the application is online and the token is valid.
+
+**Command:**
+```powershell
+curl -s https://tnt-bc5-chatbot-api.azurewebsites.net/debug/auth
+```
+*(You should see an output indicating the token is "SET" and files are present).*
+
+Also verify deployment logs show a build step:
+```powershell
+az webapp log deployment show --name tnt-bc5-chatbot-api --resource-group TNT-RG
+```
+Look for `Running oryx build...` and successful package install output.
+
+## Quick Redeploy Command
+To run the full sequence (Token -> Build -> Deploy) at once. The token script now includes a **15-second built-in wait** to prevent 502 errors:
+```powershell
+.\set_remote_token.ps1; az webapp config appsettings set --name tnt-bc5-chatbot-api --resource-group TNT-RG --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true ENABLE_ORYX_BUILD=true WEBSITE_RUN_FROM_PACKAGE=0 WEBSITES_PORT=8000; python build_zip.py; az webapp deploy --name tnt-bc5-chatbot-api --resource-group TNT-RG --src-path deploy.zip --type zip --clean true --restart true
+```
+
+> [!NOTE]
+> We have verified that the Azure environment is **Linux**. The `antenv` folder is now excluded from the zip to allow Azure to build its own compatible environment from `requirements.txt`.

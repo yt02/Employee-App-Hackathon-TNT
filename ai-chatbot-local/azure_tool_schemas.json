@@ -1,0 +1,303 @@
+[
+  {
+    "name": "check_leave_balance",
+    "description": "Check the leave balance for an employee. Returns remaining annual leave, medical leave, and unpaid leave days for the current year.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The employee ID, e.g. 'emp_001'"
+        }
+      },
+      "required": [
+        "user_id"
+      ]
+    }
+  },
+  {
+    "name": "apply_leave",
+    "description": "Apply for leave on behalf of an employee. Creates a leave request that will be pending approval. The leave balance must be sufficient.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The employee ID, e.g. 'emp_001'"
+        },
+        "leave_type": {
+          "type": "string",
+          "description": "Type of leave. Must be one of: 'annual_leave', 'medical_leave', 'unpaid_leave'"
+        },
+        "start_date": {
+          "type": "string",
+          "description": "Start date of leave in YYYY-MM-DD format, e.g. '2026-02-16'"
+        },
+        "end_date": {
+          "type": "string",
+          "description": "End date of leave in YYYY-MM-DD format (inclusive), e.g. '2026-02-17'"
+        },
+        "reason": {
+          "type": "string",
+          "description": "Reason for taking leave, e.g. 'Family vacation'"
+        }
+      },
+      "required": [
+        "user_id",
+        "leave_type",
+        "start_date",
+        "end_date"
+      ]
+    }
+  },
+  {
+    "name": "list_available_rooms",
+    "description": "List all available meeting rooms with their capacity, location, and facilities. Use this when the user asks about meeting rooms or needs to see what rooms are available.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "search_meeting_rooms",
+    "description": "Search for available meeting rooms based on their capacity, features, and availability on a specific date/time. Use this when the user asks for a room for a specific number of people (capacity) or with specific amenities.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "date": {
+          "type": "string",
+          "description": "Date for the booking in YYYY-MM-DD format, e.g. '2026-02-14'"
+        },
+        "start_time": {
+          "type": "string",
+          "description": "Start time in HH:MM format (24-hour), e.g. '14:00'"
+        },
+        "end_time": {
+          "type": "string",
+          "description": "End time in HH:MM format (24-hour), e.g. '15:00'"
+        },
+        "capacity": {
+          "type": "integer",
+          "description": "Optional. Minimum capacity required, e.g., 4 for 'find me a room for 4 people'"
+        },
+        "features": {
+          "type": "string",
+          "description": "Optional. Required amenities separated by comma, e.g. 'whiteboard,projector'"
+        }
+      },
+      "required": [
+        "date",
+        "start_time",
+        "end_time"
+      ]
+    }
+  },
+  {
+    "name": "book_meeting_room",
+    "description": "Book a meeting room for a specific date and time. The room must be available at the requested time slot. Use list_available_rooms first if you need to find room IDs.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The employee ID, e.g. 'emp_001'"
+        },
+        "room_id": {
+          "type": "string",
+          "description": "The room ID to book, e.g. 'room_a', 'room_b', 'room_c'. You can also use the room name."
+        },
+        "date": {
+          "type": "string",
+          "description": "Date for the booking in YYYY-MM-DD format, e.g. '2026-02-14'"
+        },
+        "start_time": {
+          "type": "string",
+          "description": "Start time in HH:MM format (24-hour), e.g. '14:00'"
+        },
+        "end_time": {
+          "type": "string",
+          "description": "End time in HH:MM format (24-hour), e.g. '15:00'"
+        },
+        "purpose": {
+          "type": "string",
+          "description": "Purpose of the meeting, e.g. 'Team standup'"
+        }
+      },
+      "required": [
+        "user_id",
+        "room_id",
+        "date",
+        "start_time",
+        "end_time"
+      ]
+    }
+  },
+  {
+    "name": "check_ticket_status",
+    "description": "Check the status of IT support tickets for an employee. Shows all open, in-progress, and recently resolved tickets.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The employee ID, e.g. 'emp_001'"
+        }
+      },
+      "required": [
+        "user_id"
+      ]
+    }
+  },
+  {
+    "name": "create_ticket",
+    "description": "Create a new IT support ticket. The ticket will be assigned to the IT team for resolution.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The employee ID, e.g. 'emp_001'"
+        },
+        "category": {
+          "type": "string",
+          "description": "Ticket category. Must be one of: 'hardware', 'software', 'network', 'access', 'other'"
+        },
+        "subject": {
+          "type": "string",
+          "description": "Brief subject line for the ticket, e.g. 'Laptop not charging'"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the issue"
+        },
+        "priority": {
+          "type": "string",
+          "description": "Priority level. Must be one of: 'low', 'medium', 'high', 'urgent'. Default is 'medium'."
+        }
+      },
+      "required": [
+        "user_id",
+        "category",
+        "subject",
+        "description"
+      ]
+    }
+  },
+  {
+    "name": "list_shuttle_routes",
+    "description": "List all available corporate shuttle routes and their departure times.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "book_shuttle",
+    "description": "Book a seat on a corporate shuttle for a specific route and time.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The employee ID, e.g. 'emp_001'"
+        },
+        "route_id": {
+          "type": "string",
+          "description": "The ID of the shuttle route, e.g. 'SH001'"
+        },
+        "departure_time": {
+          "type": "string",
+          "description": "The departure time, e.g. '08:30'"
+        }
+      },
+      "required": [
+        "user_id",
+        "route_id",
+        "departure_time"
+      ]
+    }
+  },
+  {
+    "name": "list_training_courses",
+    "description": "List all currently available professional training courses and seminars.",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "enroll_training",
+    "description": "Enroll an employee in a professional training course.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The employee ID, e.g. 'emp_001'"
+        },
+        "course_id": {
+          "type": "string",
+          "description": "The ID of the training course, e.g. 'TRN_001'"
+        }
+      },
+      "required": [
+        "user_id",
+        "course_id"
+      ]
+    }
+  },
+  {
+    "name": "list_wellness_activities",
+    "description": "List all upcoming health, fitness, and wellness activities (yoga, health checkups, workshops).",
+    "parameters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    }
+  },
+  {
+    "name": "join_wellness",
+    "description": "Register an employee for an upcoming wellness activity.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The employee ID, e.g. 'emp_001'"
+        },
+        "activity_id": {
+          "type": "string",
+          "description": "The ID of the wellness activity, e.g. 'WL001'"
+        }
+      },
+      "required": [
+        "user_id",
+        "activity_id"
+      ]
+    }
+  },
+  {
+    "name": "join_wellness_activity",
+    "description": "Register an employee for an upcoming wellness activity. (Alias for join_wellness)",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "The employee ID, e.g. 'emp_001'"
+        },
+        "activity_id": {
+          "type": "string",
+          "description": "The ID of the wellness activity, e.g. 'WL001'"
+        }
+      },
+      "required": [
+        "user_id",
+        "activity_id"
+      ]
+    }
+  }
+]

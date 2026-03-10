@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+requests
+
+# Azure AI Projects SDK for Microsoft Foundry Agent
+azure-ai-projects==1.0.0b10
+azure-identity
+
+# Database Support
+psycopg2-binary

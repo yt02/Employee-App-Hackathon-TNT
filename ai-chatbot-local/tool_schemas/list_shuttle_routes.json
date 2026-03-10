@@ -1,0 +1,9 @@
+{
+  "name": "list_shuttle_routes",
+  "description": "List all available corporate shuttle routes and their departure times.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

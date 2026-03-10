@@ -1,0 +1,162 @@
+[
+    {
+        "record_id": "ATT_001",
+        "user_id": "emp_001",
+        "date": "2026-01-27",
+        "clock_in": "08:55:00",
+        "clock_out": "17:30:00",
+        "total_hours": 8.58,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_002",
+        "user_id": "emp_001",
+        "date": "2026-01-28",
+        "clock_in": "09:05:00",
+        "clock_out": "18:00:00",
+        "total_hours": 8.92,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_003",
+        "user_id": "emp_001",
+        "date": "2026-01-29",
+        "clock_in": "08:50:00",
+        "clock_out": "17:15:00",
+        "total_hours": 8.42,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_004",
+        "user_id": "emp_001",
+        "date": "2026-01-30",
+        "clock_in": "09:00:00",
+        "clock_out": "17:45:00",
+        "total_hours": 8.75,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_005",
+        "user_id": "emp_001",
+        "date": "2026-01-31",
+        "clock_in": "08:58:00",
+        "clock_out": "17:20:00",
+        "total_hours": 8.37,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_006",
+        "user_id": "emp_002",
+        "date": "2026-01-27",
+        "clock_in": "09:10:00",
+        "clock_out": "17:50:00",
+        "total_hours": 8.67,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_007",
+        "user_id": "emp_002",
+        "date": "2026-01-28",
+        "clock_in": "09:00:00",
+        "clock_out": "18:05:00",
+        "total_hours": 9.08,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_008",
+        "user_id": "emp_002",
+        "date": "2026-01-29",
+        "clock_in": null,
+        "clock_out": null,
+        "total_hours": 0,
+        "status": "on_leave",
+        "notes": "Annual leave"
+    },
+    {
+        "record_id": "ATT_009",
+        "user_id": "emp_002",
+        "date": "2026-01-30",
+        "clock_in": "09:15:00",
+        "clock_out": "17:30:00",
+        "total_hours": 8.25,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_010",
+        "user_id": "emp_002",
+        "date": "2026-01-31",
+        "clock_in": "09:05:00",
+        "clock_out": "17:40:00",
+        "total_hours": 8.58,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_011",
+        "user_id": "hr_manager_001",
+        "date": "2026-01-27",
+        "clock_in": "08:45:00",
+        "clock_out": "17:00:00",
+        "total_hours": 8.25,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_012",
+        "user_id": "hr_manager_001",
+        "date": "2026-01-28",
+        "clock_in": "08:50:00",
+        "clock_out": "17:10:00",
+        "total_hours": 8.33,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_013",
+        "user_id": "hr_manager_001",
+        "date": "2026-01-29",
+        "clock_in": "08:55:00",
+        "clock_out": "17:05:00",
+        "total_hours": 8.17,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_014",
+        "user_id": "hr_manager_001",
+        "date": "2026-01-30",
+        "clock_in": "08:48:00",
+        "clock_out": "17:15:00",
+        "total_hours": 8.45,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_015",
+        "user_id": "hr_manager_001",
+        "date": "2026-01-31",
+        "clock_in": "08:52:00",
+        "clock_out": "17:00:00",
+        "total_hours": 8.13,
+        "status": "present",
+        "notes": ""
+    },
+    {
+        "record_id": "ATT_64FD7936",
+        "user_id": "facility_mgr_001",
+        "date": "2026-02-02",
+        "clock_in": "10:42:52",
+        "clock_out": null,
+        "total_hours": 0,
+        "status": "present",
+        "notes": ""
+    }
+]

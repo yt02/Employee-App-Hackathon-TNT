@@ -1,0 +1,16 @@
+{
+  "name": "check_ticket_status",
+  "description": "Check the status of IT support tickets for an employee. Shows all open, in-progress, and recently resolved tickets.",
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "user_id": {
+        "type": "string",
+        "description": "The employee ID, e.g. 'emp_001'"
+      }
+    },
+    "required": [
+      "user_id"
+    ]
+  }
+}

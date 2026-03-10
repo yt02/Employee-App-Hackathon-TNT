@@ -1,0 +1,45 @@
+[
+  {
+    "role": "employee",
+    "permissions": [
+      "view_own_leave",
+      "apply_leave",
+      "view_own_attendance",
+      "book_meeting_room",
+      "view_meeting_rooms"
+    ]
+  },
+  {
+    "role": "hr_manager",
+    "permissions": [
+      "view_own_leave",
+      "apply_leave",
+      "view_all_leave",
+      "approve_leave",
+      "reject_leave",
+      "view_own_attendance",
+      "view_all_attendance",
+      "book_meeting_room",
+      "view_meeting_rooms"
+    ]
+  },
+  {
+    "role": "facility_manager",
+    "permissions": [
+      "view_own_leave",
+      "apply_leave",
+      "view_own_attendance",
+      "book_meeting_room",
+      "view_meeting_rooms",
+      "manage_meeting_rooms",
+      "cancel_any_booking"
+    ]
+  },
+  {
+    "role": "admin",
+    "permissions": [
+      "all"
+    ]
+  }
+]
+

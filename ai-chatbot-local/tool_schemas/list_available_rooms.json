@@ -1,0 +1,9 @@
+{
+  "name": "list_available_rooms",
+  "description": "List all available meeting rooms with their capacity, location, and facilities. Use this when the user asks about meeting rooms or needs to see what rooms are available.",
+  "parameters": {
+    "type": "object",
+    "properties": {},
+    "required": []
+  }
+}

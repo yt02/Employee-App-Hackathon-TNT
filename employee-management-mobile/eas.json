@@ -1,0 +1,54 @@
+{
+  "cli": {
+    "version": ">= 8.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "production": {
+      "extends": "base",
+      "channel": "production",
+      "android": {
+        "image": "latest",
+        "buildType": "apk"
+      },
+      "ios": {
+        "image": "latest"
+      }
+    },
+    "preview": {
+      "extends": "base",
+      "channel": "preview",
+      "android": {
+        "image": "latest",
+        "buildType": "apk"
+      },
+      "ios": {
+        "image": "latest"
+      }
+    },
+    "development": {
+      "extends": "base",
+      "channel": "development",
+      "android": {
+        "image": "latest",
+        "buildType": "apk"
+      },
+      "ios": {
+        "image": "latest"
+      }
+    },
+    "base": {
+      "env": {
+        "EXPO_PUBLIC_BACKEND_URL": "https://tnt-bc5-chatbot-api.azurewebsites.net"
+      }
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "track": "internal"
+      },
+      "ios": {}
+    }
+  }
+}
