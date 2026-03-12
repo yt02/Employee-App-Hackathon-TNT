@@ -58,7 +58,7 @@ Before getting started, ensure you have the following installed:
 
 #### 1. Clone the Repository
 ```bash
-git clone https://github.com/yt02/Employee-App-Hackathon-TNT.git
+git clone [https://github.com/yt02/Employee-App-Hackathon-TNT.git](https://github.com/yt02/Employee-App-Hackathon-TNT.git)
 cd "Business Challenge 5"
 ```
 
